@@ -1,0 +1,32 @@
+package com.anusha.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.anusha.model.OrderItem;
+import com.anusha.repository.BookRepository;
+import com.anusha.repository.OrderItemRepository;
+
+@Service
+public class OrderItemService {
+
+	@Autowired
+	private OrderItemRepository orderItemRepository;
+	
+	@Autowired
+	private BookRepository bookRepository;
+
+	public void save(OrderItem orderItem) {
+		orderItemRepository.save(orderItem);
+	}
+
+	public BookRepository getBookRepository() {
+		return bookRepository;
+	}
+
+	public void setBookRepository(BookRepository bookRepository) {
+		this.bookRepository = bookRepository;
+	}
+
+
+}
